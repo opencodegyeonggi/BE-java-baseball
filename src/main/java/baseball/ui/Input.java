@@ -23,4 +23,10 @@ public class Input {
 
         return scanner.nextLine();
     }
+
+    public static String receiveResumeInput() {
+        Output.printRequestResumeInput();
+
+        return scanner.nextLine();
+    }
 }

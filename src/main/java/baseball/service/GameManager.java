@@ -11,9 +11,27 @@ public class GameManager {
 
         Input.initializeScanner();
         try {
-            baseballGame.playBaseball();
+            boolean isResume = true;
+
+            while (isResume) {
+                baseballGame.playBaseball();
+
+                isResume = isResumeOpinion();
+            }
         } finally {
             Input.closeScanner();
+        }
+    }
+
+    private boolean isResumeOpinion() {
+        try {
+            ResumeOrNot opinion = new ResumeOrNot(Input.receiveResumeInput());
+
+            return opinion.isResume();
+        } catch (IllegalArgumentException e) {
+            Output.printExceptionMessage(e.getMessage());
+
+            return isResumeOpinion();
         }
     }
 }
