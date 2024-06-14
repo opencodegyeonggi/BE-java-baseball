@@ -13,9 +13,12 @@ public class BaseballGame {
     public void playBaseball() {
         computerBaseballs = computer.generateRandomBaseballs();
 
-        do {
+        boolean correct = false;
+
+        while(!correct) {
             playBaseballOnce();
-        } while(!isCorrectAnswer());
+            correct = isCorrectAnswer();
+        }
 
         Output.printCorrectAnswer();
     }

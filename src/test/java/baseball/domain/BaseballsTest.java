@@ -31,10 +31,12 @@ class BaseballsTest {
         Baseballs ask3 = BaseballFactory.createBaseballs("193");
         Baseballs ask4 = BaseballFactory.createBaseballs("123");
 
-        assertEquals(0, answer.countStrike(ask1), "낫싱");
-        assertEquals(1, answer.countStrike(ask2), "1 스트라이크");
-        assertEquals(2, answer.countStrike(ask3), "2 스트라이크");
-        assertEquals(3, answer.countStrike(ask4), "3 스트라이크");
+        assertAll(
+                () -> assertEquals(0, answer.countStrike(ask1), "낫싱"),
+                () -> assertEquals(1, answer.countStrike(ask2), "1 스트라이크"),
+                () -> assertEquals(2, answer.countStrike(ask3), "2 스트라이크"),
+                () -> assertEquals(3, answer.countStrike(ask4), "3 스트라이크")
+        );
     }
 
     @Test
@@ -46,9 +48,11 @@ class BaseballsTest {
         Baseballs ask3 = BaseballFactory.createBaseballs("261");
         Baseballs ask4 = BaseballFactory.createBaseballs("231");
 
-        assertEquals(0, answer.countBall(ask1), "낫싱");
-        assertEquals(1, answer.countBall(ask2), "1 볼");
-        assertEquals(2, answer.countBall(ask3), "2 볼");
-        assertEquals(3, answer.countBall(ask4), "3 볼");
+        assertAll(
+                () -> assertEquals(0, answer.countBall(ask1), "낫싱"),
+                () -> assertEquals(1, answer.countBall(ask2), "1 볼"),
+                () -> assertEquals(2, answer.countBall(ask3), "2 볼"),
+                () -> assertEquals(3, answer.countBall(ask4), "3 볼")
+        );
     }
 }

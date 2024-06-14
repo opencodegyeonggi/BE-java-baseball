@@ -4,10 +4,10 @@ import baseball.domain.Baseballs;
 import baseball.ui.Output;
 
 public class Result {
+    private static final int COUNT_ZERO = 0;
+
     private final int strikeNumber;
     private final int ballNumber;
-
-    private static final int COUNT_ZERO = 0;
 
     public Result(Baseballs computerBaseballs, Baseballs userBaseballs) {
         strikeNumber = computerBaseballs.countStrike(userBaseballs);
